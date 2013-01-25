@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class ExampleViewController;
 
 @interface CentralAccess : NSObject
 
--(void)InitApplication;
+-(id)init;
+
+@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ExampleViewController *viewController;
 
 @end

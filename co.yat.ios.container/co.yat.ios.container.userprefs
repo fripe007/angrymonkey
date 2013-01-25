@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="co.yat.ios.binding/ApiDefinition.cs">
+    <Files>
+      <File FileName="Main.cs" Line="17" Column="51" />
+      <File FileName="AppDelegate.cs" Line="34" Column="4" />
+      <File FileName="co.yat.ios.binding/ApiDefinition.cs" Line="14" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="co.yat.ios.binding" expanded="True" />
+          <Node name="co.yat.ios.container" expanded="True" selected="True">
+            <Node name="References" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

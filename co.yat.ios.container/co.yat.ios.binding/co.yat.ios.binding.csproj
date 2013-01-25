@@ -46,4 +46,14 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="..\..\co.yat.ios.ExampleView\Build\Products\Debug-iphoneos\libExampleView.a">
+      <Link>libExampleView.a</Link>
+    </ObjcBindingNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="libExampleView.linkwith.cs">
+      <DependentUpon>libExampleView.a</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

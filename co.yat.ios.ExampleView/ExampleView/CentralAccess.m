@@ -7,12 +7,25 @@
 //
 
 #import "CentralAccess.h"
+#import "ExampleViewController.h"
 
 @implementation CentralAccess
 
--(void)InitApplication {
+-(id)init {
     
-    NSLog(@"Init Application");
+    self = [super init];
+    
+    if(self) {
+        
+        NSLog(@"Init Application");
+        self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+        // Override point for customization after application launch.
+        self.viewController = [[[ExampleViewController alloc] initWithNibName:@"ExampleViewController" bundle:nil] autorelease];
+        self.window.rootViewController = self.viewController;
+        [self.window makeKeyAndVisible];
+    }
+    
+    return self;
     
 }
 

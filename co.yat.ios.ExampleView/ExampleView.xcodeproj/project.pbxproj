@@ -79,7 +79,6 @@
 				424F067216B33B6C007E1CC2 /* ExampleViewController.h */,
 				424F067316B33B6C007E1CC2 /* ExampleViewController.m */,
 				424F066716B33B24007E1CC2 /* Supporting Files */,
-				424F067416B33B6C007E1CC2 /* ExampleViewController.xib */,
 			);
 			path = ExampleView;
 			sourceTree = "<group>";
@@ -87,6 +86,7 @@
 		424F066716B33B24007E1CC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				424F067416B33B6C007E1CC2 /* ExampleViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,6 +204,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYMROOT = build;
 			};
 			name = Debug;
 		};
@@ -216,6 +217,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYMROOT = build;
 			};
 			name = Release;
 		};

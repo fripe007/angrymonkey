@@ -14,8 +14,6 @@ namespace co.yat.ios.container
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-		UIWindow window;
-
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
 		// method you should instantiate the window, load the UI into it and then make the window
@@ -25,8 +23,14 @@ namespace co.yat.ios.container
 		//
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
+
+			System.Console.WriteLine("Starting Shim");
+
+
+
+			System.Console.WriteLine("Initialising Central Access");
+
+			co.yat.ios.binding.CentralAccess access = new co.yat.ios.binding.CentralAccess();
 			//window.RootViewController = viewController;
 			//window.MakeKeyAndVisible ();
 			

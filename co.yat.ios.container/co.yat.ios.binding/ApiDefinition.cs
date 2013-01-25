@@ -9,7 +9,7 @@ namespace co.yat.ios.binding
 {
 
 	[BaseType (typeof(NSObject))]
-	interface Widget {
+	interface CentralAccess {
 
 	}
 

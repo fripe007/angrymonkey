@@ -5,7 +5,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace co.yet.ios.container
+namespace co.yat.ios.container
 {
 	public class Application
 	{
