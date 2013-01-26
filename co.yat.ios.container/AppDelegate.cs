@@ -4,6 +4,7 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using co.yat.ios.binding;
 
 namespace co.yat.ios.container
 {
@@ -24,18 +25,19 @@ namespace co.yat.ios.container
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 
-			System.Console.WriteLine("Starting Shim");
-
-
-
 			System.Console.WriteLine("Initialising Central Access");
 
-			co.yat.ios.binding.CentralAccess access = new co.yat.ios.binding.CentralAccess();
-			//window.RootViewController = viewController;
-			//window.MakeKeyAndVisible ();
+			CentralAccess access = new CentralAccess();
+			//wire up the message delegate
+			access.SendMessage += (s,e) => {
+				Console.WriteLine("Message back " + ((LinkEventArgs)e).Uri + " " + ((LinkEventArgs)e).Json);
+			};
+
+			access.GetMessage(new NSString("/pies/cakes"),new NSString("{}"));
 			
 			return true;
 		}
 	}
+
 }
 

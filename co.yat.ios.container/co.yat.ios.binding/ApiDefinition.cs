@@ -7,11 +7,30 @@ using MonoTouch.UIKit;
 
 namespace co.yat.ios.binding
 {
-
-	[BaseType (typeof(NSObject))]
+	
+	[BaseType (typeof (NSObject), Delegates= new string[] { "Delegate"},
+	 Events = new Type[] { typeof(MonoLink)})]
 	interface CentralAccess {
 
+		[Export ("delegate", ArgumentSemantic.Assign), New][NullAllowed]
+		NSObject WeakDelegate { get; set; }
+
+		[Wrap ("WeakDelegate"), New]
+		MonoLink Delegate { get; set; }
+
+		[Export ("GetMessage:json:")]
+		void GetMessage (NSString uri, NSString json);
+
 	}
+
+	[BaseType (typeof(NSObject))]
+	[Model]
+	interface MonoLink {
+		[Export ("SendMessage:uri:json:"), EventArgs("Link")]
+		void SendMessage (NSObject sender, NSString uri, NSString json);
+	}
+
+
 
 	// The first step to creating a binding is to add your native library ("libNativeLibrary.a")
 	// to the project by right-clicking (or Control-clicking) the folder containing this source
