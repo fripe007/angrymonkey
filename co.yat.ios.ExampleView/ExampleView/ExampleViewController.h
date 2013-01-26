@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SecondViewController.h"
 
-@interface ExampleViewController : UIViewController
+@interface ExampleViewController : UIViewController <SecondViewDelegate> {
+
+    IBOutlet UIButton * button;
+
+}
+
+-(IBAction)ClickButton: (id)sender;
 
 @end
+
+

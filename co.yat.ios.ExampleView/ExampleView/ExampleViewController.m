@@ -23,6 +23,20 @@
     return self;
 }
 
+-(IBAction)ClickButton: (id)sender {
+    
+    SecondViewController * viewController = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    viewController.delegate = self;
+    [self presentViewController:viewController animated:YES completion: nil];
+
+}
+
+-(void) DismissClicked {
+    
+    [self dismissModalViewControllerAnimated: YES];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

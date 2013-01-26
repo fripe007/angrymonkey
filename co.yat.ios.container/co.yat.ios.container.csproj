@@ -111,5 +111,8 @@
     <InterfaceDefinition Include="..\co.yat.ios.ExampleView\ExampleView\ExampleViewController.xib">
       <Link>Resources\ExampleViewController.xib</Link>
     </InterfaceDefinition>
+    <InterfaceDefinition Include="..\co.yat.ios.ExampleView\ExampleView\SecondViewController.xib">
+      <Link>Resources\SecondViewController.xib</Link>
+    </InterfaceDefinition>
   </ItemGroup>
 </Project>
