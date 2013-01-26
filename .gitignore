@@ -4,3 +4,14 @@
 /co.yat.ios.container/co.yat.ios.binding/bin/
 /co.yat.ios.ExampleView/Build/Intermediates/
 /co.yat.ios.ExampleView/Build/
+/.DS_Store
+/co.yat.android.container/bin/
+/co.yat.android.container/co.yat.android.binding/.DS_Store
+/co.yat.android.container/.DS_Store
+/co.yat.android.container/co.yat.android.binding/bin/
+/co.yat.android.container/co.yat.android.binding/obj/
+/co.yat.android.container/obj/
+/co.yat.android.ExampleView/.DS_Store
+/co.yat.android.ExampleView/bin/classes/
+/co.yat.android.ExampleView/bin/res/
+/co.yat.android.ExampleView/bin/

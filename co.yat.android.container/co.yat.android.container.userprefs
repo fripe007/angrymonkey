@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Activity1.cs">
+    <Files>
+      <File FileName="co.yat.android.binding/Jars/AboutJars.txt" Line="8" Column="1" />
+      <File FileName="Activity1.cs" Line="9" Column="1" />
+      <File FileName="co.yat.android.binding/Transforms/EnumMethods.xml" Line="1" Column="1" />
+      <File FileName="co.yat.android.binding/Transforms/Metadata.xml" Line="2" Column="1" />
+      <File FileName="co.yat.android.binding/Additions/AboutAdditions.txt" Line="1" Column="1" />
+      <File FileName="co.yat.android.binding/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="../../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Novell/Novell.MonoDroid.Common.targets" Line="13" Column="43" />
+      <File FileName="Properties/AndroidManifest.xml" Line="6" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.co.yat.android.container AndroidDeviceId-Debug="015d2a508c60121a" />
+</Properties>
