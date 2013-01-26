@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.android.container", "co.yat.android.container.csproj", "{31BE5BB4-36AE-4107-A28E-59CC422C5B48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.android.binding", "co.yat.android.binding\co.yat.android.binding.csproj", "{23768F22-9A04-43F2-87C1-E6BA2BF2861F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.android.binding", "..\co.yat.android.binding\co.yat.android.binding.csproj", "{23768F22-9A04-43F2-87C1-E6BA2BF2861F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -64,7 +64,7 @@
     <Folder Include="Resources\layout\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="co.yat.android.binding\co.yat.android.binding.csproj">
+    <ProjectReference Include="..\co.yat.android.binding\co.yat.android.binding.csproj">
       <Project>{23768F22-9A04-43F2-87C1-E6BA2BF2861F}</Project>
       <Name>co.yat.android.binding</Name>
     </ProjectReference>

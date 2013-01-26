@@ -89,7 +89,7 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 		
-		<zip destfile="../co.yat.android.container/co.yat.android.binding/ExampleView.zip"
+		<zip destfile="../co.yat.android.binding/ExampleView.zip"
 		   basedir="./"
 		   includes="bin/**,res/**"
 		/>
