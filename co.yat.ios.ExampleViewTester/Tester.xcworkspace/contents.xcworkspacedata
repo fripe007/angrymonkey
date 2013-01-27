@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../co.yat.ios.ExampleView/ExampleView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:ExampleViewTester.xcodeproj">
+   </FileRef>
+</Workspace>

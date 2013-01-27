@@ -11,19 +11,26 @@
 
 @class ExampleViewController;
 
+
 @protocol MonoLink <NSObject>
 -(void) SendMessage: (id)sender uri:(NSString*)uriValue json: (NSString*)payload;
 @end
 
+
 @interface CentralAccess : NSObject
 
--(id)init;
+    -(id)init;
 
--(void)GetMessage: (NSString*)uri json: (NSString*)payload;
+    -(void)LoadMainWindow;
 
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ExampleViewController *viewController;
+    -(void)GetMessage: (NSString*)uri json: (NSString*)payload;
+    -(void)SendMessage: (NSString*)uri json: (NSString*)payload;
 
-@property (nonatomic,weak) id delegate;
+    +(CentralAccess*)GetInstance;
+
+    @property (strong, nonatomic) UIWindow *window;
+    @property (strong, nonatomic) ExampleViewController *viewController;
+
+    @property (nonatomic,weak) id delegate;
 
 @end

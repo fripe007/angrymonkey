@@ -12,11 +12,17 @@ namespace co.yat.ios.binding
 	 Events = new Type[] { typeof(MonoLink)})]
 	interface CentralAccess {
 
+		[Static,Export ("GetInstance")]
+		CentralAccess GetInstance();
+
 		[Export ("delegate", ArgumentSemantic.Assign), New][NullAllowed]
 		NSObject WeakDelegate { get; set; }
 
 		[Wrap ("WeakDelegate"), New]
 		MonoLink Delegate { get; set; }
+
+		[Export ("LoadMainWindow")]
+		void LoadMainWindow ();
 
 		[Export ("GetMessage:json:")]
 		void GetMessage (NSString uri, NSString json);

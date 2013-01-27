@@ -7,6 +7,7 @@
 //
 
 #import "ExampleViewController.h"
+#import "CentralAccess.h"
 
 @interface ExampleViewController ()
 
@@ -25,15 +26,24 @@
 
 -(IBAction)ClickButton: (id)sender {
     
-    SecondViewController * viewController = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-    viewController.delegate = self;
-    [self presentViewController:viewController animated:YES completion: nil];
+    CentralAccess *access = [CentralAccess GetInstance];
+    
+    [access SendMessage: @"/ExampleViewController/Button/{Click}" json:@"{}"];
 
 }
 
--(void) DismissClicked {
+-(void)GetMessage: (NSString*)uri json: (NSString*)payload {
     
-    [self dismissModalViewControllerAnimated: YES];
+     NSLog(@"Got message uri: %@",uri);
+    
+    if([uri isEqualToString:@"/ExampleViewController/SecondViewController/{Show}"]) {
+        SecondViewController * viewController = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+        [self presentViewController:viewController animated:YES completion: nil];
+    }
+    
+    if([uri isEqualToString:@"/ExampleViewController/SecondViewController/{Hide}"]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
     
 }
 

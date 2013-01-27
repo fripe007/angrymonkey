@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "CentralAccess.h"
 
 @interface SecondViewController ()
 
@@ -25,7 +26,9 @@
 
 -(IBAction)ClickButton: (id)sender {
  
-    [delegate DismissClicked];
+    CentralAccess *access = [CentralAccess GetInstance];
+    
+    [access SendMessage: @"/SecondViewController/Button/{Click}" json:@"{}"];
 }
 
 - (void)viewDidLoad

@@ -14,6 +14,9 @@ namespace co.yat.ios.container
 	[Register ("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate
 	{
+
+		private CentralAccess _access;
+
 		// class-level declarations
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this 
@@ -27,13 +30,25 @@ namespace co.yat.ios.container
 
 			System.Console.WriteLine("Initialising Central Access");
 
-			CentralAccess access = new CentralAccess();
+			_access = CentralAccess.GetInstance();
+
 			//wire up the message delegate
-			access.SendMessage += (s,e) => {
+			_access.SendMessage += (s,e) => {
+
 				Console.WriteLine("Message back " + ((LinkEventArgs)e).Uri + " " + ((LinkEventArgs)e).Json);
+
+				switch(((LinkEventArgs)e).Uri) {
+					case "/ExampleViewController/Button/{Click}":
+					_access.GetMessage(new NSString("/ExampleViewController/SecondViewController/{Show}"),new NSString("{}"));
+						break;
+					case "/SecondViewController/Button/{Click}":
+					_access.GetMessage(new NSString("/ExampleViewController/SecondViewController/{Hide}"),new NSString("{}"));
+						break;
+				}
+
 			};
 
-			access.GetMessage(new NSString("/pies/cakes"),new NSString("{}"));
+			_access.LoadMainWindow();
 			
 			return true;
 		}

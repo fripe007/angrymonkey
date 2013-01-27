@@ -47,7 +47,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="..\..\co.yat.ios.ExampleView\Build\Debug-iphoneos\libExampleView.a">
+    <ObjcBindingNativeLibrary Include="..\..\co.yat.ios.ExampleViewTester\Products\Debug-iphoneos\libExampleView.a">
       <Link>libExampleView.a</Link>
     </ObjcBindingNativeLibrary>
   </ItemGroup>

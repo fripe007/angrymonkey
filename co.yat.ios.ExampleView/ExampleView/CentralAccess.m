@@ -9,9 +9,9 @@
 #import "CentralAccess.h"
 #import "ExampleViewController.h"
 
-@implementation CentralAccess
+static id _this;
 
-@synthesize delegate;
+@implementation CentralAccess
 
 -(id)init {
     
@@ -20,22 +20,49 @@
     if(self) {
         
         NSLog(@"Init Application");
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        // Override point for customization after application launch.
-        self.viewController = [[ExampleViewController alloc] initWithNibName:@"ExampleViewController" bundle:nil];
-        self.window.rootViewController = self.viewController;
-        [self.window makeKeyAndVisible];
     }
     
     return self;
     
 }
 
--(void)GetMessage: (NSString*)uri json: (NSString*)payload {
++(CentralAccess*)GetInstance {
     
-    NSLog(@"Got message uri: %@",uri);
-    [delegate SendMessage: self uri:@"/cake/pie" json:@"{}"];
+    if(_this == nil) {
+        _this = [[CentralAccess alloc] init];
+    }
+    
+    return _this;
+    
+}
+
+-(void)LoadMainWindow {
+    
+        NSLog(@"Load Main View");
+    
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.viewController = [[ExampleViewController alloc] initWithNibName:@"ExampleViewController" bundle:nil];
+        self.window.rootViewController = self.viewController;
+        [self.window makeKeyAndVisible];
+    
+        [self.delegate SendMessage: self uri:@"/MainWindow/{Loaded}" json:@"{}"];
+    
+}
+
+
+-(void)GetMessage: (NSString*)uri json: (NSString*)payload {
         
+    // wire up events here
+    [self.viewController GetMessage:uri json:payload];
+        
+}
+
+-(void)SendMessage: (NSString*)uri json: (NSString*)payload {
+    
+    NSLog(@"Dispatch Message %@",uri);
+    if(self.delegate != nil)
+        [self.delegate SendMessage: self uri:uri json:payload];
+    
 }
 
 @end

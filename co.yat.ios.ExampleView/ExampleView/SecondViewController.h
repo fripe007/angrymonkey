@@ -8,21 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SecondViewDelegate <NSObject>
-
--(void) DismissClicked;
-
-@end
-
 @interface SecondViewController : UIViewController
 {
-    id delegate;
     IBOutlet UIButton * button;
 }
 
 -(IBAction)ClickButton: (id)sender;
-
-@property (nonatomic,retain) id delegate;
 
 @end
 

@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
 
-@interface ExampleViewController : UIViewController <SecondViewDelegate> {
+@interface ExampleViewController : UIViewController {
 
     IBOutlet UIButton * button;
 
 }
 
 -(IBAction)ClickButton: (id)sender;
+-(void)GetMessage: (NSString*)uri json: (NSString*)payload;
 
 @end
 
