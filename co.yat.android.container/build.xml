@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="Android Example View Project" default="info">
+   <target name="debug">
+      <echo>Building Example Android Application!</echo>
+			<echo>Clean Up</echo>
+			
+			<delete dir="bin"/>
+			<delete dir="obj"/>
+			<delete dir="../co.yat.android.binding/bin"/>
+			<delete dir="../co.yat.android.binding/obj"/>
+			<delete file="../co.yat.android.binding/ExampleView.zip"/>
+			
+			<echo>ZIP Jar Package</echo>
+			
+			<ant antfile="../co.yat.android.ExampleView/build.xml" target="debug" useNativeBasedir="true"/> 			
+   </target>
+</project>

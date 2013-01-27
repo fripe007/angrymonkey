@@ -22,5 +22,6 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = co.yat.android.container.csproj
+		version = 0.1.1
 	EndGlobalSection
 EndGlobal

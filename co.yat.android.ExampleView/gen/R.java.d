@@ -3,7 +3,9 @@
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/drawable-mdpi/ic_launcher.png \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/drawable-xhdpi/ic_launcher.png \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/layout/activity_main.xml \
+/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/layout/view_two.xml \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/menu/activity_main.xml \
+/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/values/dimens.xml \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/values/strings.xml \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/values/styles.xml \
 /Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.ExampleView/res/values-v11/styles.xml \

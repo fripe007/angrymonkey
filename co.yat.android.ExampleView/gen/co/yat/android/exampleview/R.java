@@ -10,22 +10,31 @@ package co.yat.android.exampleview;
 public final class R {
     public static final class attr {
     }
+    public static final class dimen {
+        public static int View_Title_Size=0x7f040000;
+    }
     public static final class drawable {
         public static int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static int menu_settings=0x7f070000;
+        public static int button1=0x7f080000;
+        public static int button2=0x7f080002;
+        public static int menu_settings=0x7f080003;
+        public static int textView1=0x7f080001;
     }
     public static final class layout {
         public static int activity_main=0x7f030000;
+        public static int view_two=0x7f030001;
     }
     public static final class menu {
-        public static int activity_main=0x7f060000;
+        public static int activity_main=0x7f070000;
     }
     public static final class string {
-        public static int app_name=0x7f040000;
-        public static int hello_world=0x7f040001;
-        public static int menu_settings=0x7f040002;
+        public static int View1_Button_Text=0x7f050003;
+        public static int View_One_Title=0x7f050004;
+        public static int app_name=0x7f050000;
+        public static int hello_world=0x7f050001;
+        public static int menu_settings=0x7f050002;
     }
     public static final class style {
         /** 
@@ -49,10 +58,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static int AppBaseTheme=0x7f050000;
+        public static int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static int AppTheme=0x7f050001;
+        public static int AppTheme=0x7f060001;
     }
 }

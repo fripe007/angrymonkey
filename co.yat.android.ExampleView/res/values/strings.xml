@@ -4,5 +4,7 @@
     <string name="app_name">ExampleView</string>
     <string name="hello_world">Hello World</string>
     <string name="menu_settings">Settings</string>
+    <string name="View1_Button_Text">Show View Two</string>
+    <string name="View_One_Title">View One</string>
 
 </resources>

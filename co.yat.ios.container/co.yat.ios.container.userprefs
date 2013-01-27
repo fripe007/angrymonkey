@@ -3,26 +3,31 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="AppDelegate.cs">
     <Files>
       <File FileName="Main.cs" Line="8" Column="16" />
-      <File FileName="AppDelegate.cs" Line="37" Column="1" />
-      <File FileName="co.yat.ios.binding/ApiDefinition.cs" Line="12" Column="25" />
+      <File FileName="AppDelegate.cs" Line="30" Column="4" />
+      <File FileName="co.yat.ios.binding/ApiDefinition.cs" Line="13" Column="25" />
       <File FileName="Info.plist" />
+      <File FileName="co.yat.ios.binding/StructsAndEnums.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="co.yat.ios.binding" expanded="True" />
+          <Node name="co.yat.ios.binding" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
           <Node name="co.yat.ios.container" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="Resources" expanded="True" selected="True" />
+            <Node name="Resources" expanded="True" />
+            <Node name="AppDelegate.cs" selected="True" />
           </Node>
         </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.ios.container/AppDelegate.cs" line="33" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
