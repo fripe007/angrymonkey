@@ -3,56 +3,60 @@
 			Prebuild for ios container
     </description>
   <!-- set global properties for this build -->
-  <property name="projectDir" location="../co.yat.ios.ExampleView/"/>
-	<property name="outputFile" value="libExampleView"/>
-	<property name="outputExt" value=".a"/>
-	<property name="outputLocSim" value="build/Debug-iphonesimulator/${outputFile}${outputExt}"/>
-	<property name="outputLocDevice" value="build/Debug-iphoneos/${outputFile}${outputExt}"/>
-  <property name="projectName" value="ExampleView.xcodeproj"/>
-	<property name="XcodeTarget"  value="ExampleView"/>
-  <property name="buildDir"  value="dist"/>
-	<property name="sdkVersion" value="6.0"/>
-	<property name="targetFolder" value="../co.yat.ios.binding"/>
-	<property name="builtAppPath" value="bin/iPhoneSimulator/Calabash/coyatioscontainer.app"/>
+  <property name="PROJECT_DIR" location="../co.yat.ios.ExampleView/"/>
+	<property name="OUTPUT_FILE" value="libExampleView"/>
+	<property name="OUTPUT_EXT" value=".a"/>
+	<property name="OUTPUT_SIMULATOR" value="build/Debug-iphonesimulator/${OUTPUT_FILE}${OUTPUT_EXT}"/>
+	<property name="OUTPUT_DEVICE" value="build/Debug-iphoneos/${OUTPUT_FILE}${OUTPUT_EXT}"/>
+  <property name="PROJECT_NAME" value="ExampleView.xcodeproj"/>
+	<property name="XCODE_TARGET"  value="ExampleView"/>
+	<property name="SDK_VERSION" value="6.0"/>
+	<property name="TARGET_FOLDER" value="../co.yat.ios.binding"/>
+	<property name="APP_PATH" value="bin/iPhoneSimulator/Calabash/coyatioscontainer.app"/>
 	
-	<echo>Building ${XcodeTarget}</echo>
-	<target name="debugSim">
+	<target name="default">
 		<delete dir="bin"/>
 		<delete dir="obj"/>
-		<delete dir="${targetFolder}/bin"/>
-		<delete dir="${targetFolder}/obj"/>
-		<exec dir="${projectDir}" executable="xcodebuild">
-	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphonesimulator${sdkVersion} -configuration Debug "/>
+		<delete dir="${TARGET_FOLDER}/bin"/>
+		<delete dir="${TARGET_FOLDER}/obj"/>
+	</target>
+	
+	<target name="debugSim" depends="default">
+		<exec dir="${PROJECT_DIR}" executable="xcodebuild">
+	  	<arg line="-target &quot;${XCODE_TARGET}&quot; -sdk iphonesimulator${SDK_VERSION} -configuration Debug "/>
 		</exec>
-		<copy file="${projectDir}/${outputLocSim}" todir="${targetFolder}"/>
-		<echo> WRITING: ${targetFolder}/${outputFile}.linkwith.cs</echo>
-		<echo file="${targetFolder}/${outputFile}.linkwith.cs" level="verbose" append="false">using System;
+		<copy file="${PROJECT_DIR}/${OUTPUT_SIMULATOR}" todir="${TARGET_FOLDER}"/>
+		<echo file="${TARGET_FOLDER}/${OUTPUT_FILE}.linkwith.cs" level="verbose" append="false">using System;
 using MonoTouch.ObjCRuntime;
 
 [assembly: LinkWith ("libExampleView.a", LinkTarget.Simulator, ForceLoad = true)]</echo>
 	</target>
 	
-	<target name="debugDevice">	
-		<exec dir="${projectDir}" executable="xcodebuild">
-	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphoneos${sdkVersion} -configuration Debug "/>
+	<target name="debugDevice" depends="default">	
+		
+		<exec dir="${PROJECT_DIR}" executable="xcodebuild">
+	  	<arg line="-target &quot;${XCODE_TARGET}&quot; -sdk iphoneos${SDK_VERSION} -configuration Debug "/>
 		</exec>
-		<copy file="${projectDir}/${outputLocDevice}" todir="${targetFolder}"/>
+		<copy file="${PROJECT_DIR}/${OUTPUT_DEVICE}" todir="${TARGET_FOLDER}"/>
+		
 	</target>
 	
 	<target name="test" depends="debugSim">
+		
 		<delete dir="testresults"/>
 		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
 			<arg line="build &quot;--configuration:Calabash|iPhoneSimulator&quot;"/>
 		</exec>
 		<mkdir dir="testresults"/>
 		<exec executable="cucumber">
-			<env key="APP_BUNDLE_PATH" value="${builtAppPath}"/>
+			<env key="APP_BUNDLE_PATH" value="${APP_PATH}"/>
 			<redirector output="./testresults/results.txt" alwayslog="true"/> 
 			<arg line="-v"/>
 		</exec>
 	  <move todir="testresults">
 	    <fileset file="*.png"/>
 	  </move>
+		
 	</target>
 	
 </project>
