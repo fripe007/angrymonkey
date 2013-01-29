@@ -116,17 +116,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="co.yat.ios.binding\co.yat.ios.binding.csproj">
-      <Project>{992BCBD9-B277-4FD6-875D-4633825A8114}</Project>
-      <Name>co.yat.ios.binding</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <InterfaceDefinition Include="..\co.yat.ios.ExampleView\ExampleView\ExampleViewController.xib">
       <Link>Resources\ExampleViewController.xib</Link>
     </InterfaceDefinition>
     <InterfaceDefinition Include="..\co.yat.ios.ExampleView\ExampleView\SecondViewController.xib">
       <Link>Resources\SecondViewController.xib</Link>
     </InterfaceDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\co.yat.ios.binding\co.yat.ios.binding.csproj">
+      <Project>{992BCBD9-B277-4FD6-875D-4633825A8114}</Project>
+      <Name>co.yat.ios.binding</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

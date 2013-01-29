@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.ios.container", "co.yat.ios.container.csproj", "{A3A15EE7-7E4B-446F-B8BC-4D36664F7260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.ios.binding", "co.yat.ios.binding\co.yat.ios.binding.csproj", "{992BCBD9-B277-4FD6-875D-4633825A8114}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "co.yat.ios.binding", "..\co.yat.ios.binding\co.yat.ios.binding.csproj", "{992BCBD9-B277-4FD6-875D-4633825A8114}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

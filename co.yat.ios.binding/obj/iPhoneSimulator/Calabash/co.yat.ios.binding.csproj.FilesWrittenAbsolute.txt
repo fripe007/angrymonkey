@@ -1,0 +1,2 @@
+/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.ios.binding/bin/iPhoneSimulator/Calabash/co.yat.ios.binding.dll
+/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.ios.binding/obj/iPhoneSimulator/Calabash/co.yat.ios.binding.dll
