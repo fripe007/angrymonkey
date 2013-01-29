@@ -25,3 +25,5 @@
 /co.yat.ios.ExampleViewTester/Products/.DS_Store
 /co.yat.ios.ExampleViewTester/.DS_Store
 /co.yat.ios.ExampleViewTester/Products/
+/co.yat.ios.container/co.yat.ios.binding/libExampleView.a
+/co.yat.ios.container/co.yat.ios.binding/libExampleView.linkwith.cs
