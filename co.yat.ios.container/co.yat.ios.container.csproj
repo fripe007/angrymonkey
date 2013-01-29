@@ -24,6 +24,8 @@
     <MtouchProfiling>True</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
     <AssemblyName>coyetioscontainer</AssemblyName>
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -83,6 +85,18 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <AssemblyName>coyatioscontainer</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Calabash|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Calabash</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <AssemblyName>coyatioscontainer</AssemblyName>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchExtraArgs>-gcc_flags "-framework CFNetwork -framework CoreGraphics -force_load $(ProjectDir)/../Calabash_Frameworks/iOS/calabash.framework/calabash -lstdc++"</MtouchExtraArgs>
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

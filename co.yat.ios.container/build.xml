@@ -35,9 +35,11 @@ using MonoTouch.ObjCRuntime;
 [assembly: LinkWith ("libExampleView.a", LinkTarget.Simulator, ForceLoad = true)]</echo>
 	</target>
 	
-	<target name="test">
-		
-		
+	<target name="test" depends="debugSim">
+		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+			<arg line="build -c:Calabash"/>
+		</exec>
+		<exec executable="cucumber"/>
 	</target>
 	
 </project>

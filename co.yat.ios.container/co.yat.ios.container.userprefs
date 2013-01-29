@@ -1,18 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="co.yat.ios.binding/ApiDefinition.cs">
     <Files>
       <File FileName="Main.cs" Line="8" Column="16" />
       <File FileName="AppDelegate.cs" Line="30" Column="4" />
       <File FileName="co.yat.ios.binding/ApiDefinition.cs" Line="13" Column="25" />
       <File FileName="co.yat.ios.binding/StructsAndEnums.cs" Line="1" Column="1" />
       <File FileName="Info.plist" />
+      <File FileName="co.yat.ios.binding/libExampleView.linkwith.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="co.yat.ios.binding" expanded="True" />
-          <Node name="co.yat.ios.container" expanded="True" />
+          <Node name="co.yat.ios.binding" expanded="True">
+            <Node name="libExampleView.a" expanded="True" />
+          </Node>
+          <Node name="co.yat.ios.container" expanded="True" selected="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
