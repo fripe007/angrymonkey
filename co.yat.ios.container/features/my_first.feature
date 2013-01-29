@@ -4,11 +4,14 @@ Feature: Example tests
 	Which will allow me to test my interface
 
 
-  Scenario: Default
-		Given I am on View One
-    Then I should see "View One"
+  Scenario: View 1
+		Given I wait to see "View One"
+		And take picture
 		
-  Scenario: View Transition
-		Given I am on View One
-		And I touch "Show View Two"
-    Then I wait to see "View Two"
+		When I touch the "Goto View Two" button
+		Then I wait to see "View Two"
+		And take picture
+		
+		When I touch the "Goto View One" button
+		Then I wait to see "View One"
+		And take picture

@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Activity1.cs">
     <Files>
-      <File FileName="Activity1.cs" Line="39" Column="1" />
+      <File FileName="Activity1.cs" Line="13" Column="22" />
       <File FileName="Properties/AndroidManifest.xml" Line="6" Column="12" />
     </Files>
     <Pads>
@@ -11,9 +11,10 @@
           <Node name="co.yat.android.binding" expanded="True">
             <Node name="Transforms" expanded="True" />
           </Node>
-          <Node name="co.yat.android.container" expanded="True" selected="True">
+          <Node name="co.yat.android.container" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="Properties" expanded="True" />
+            <Node name="Activity1.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -23,9 +24,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/njackson/Documents/Code/Mono/MultiplatformMobile/co.yat.android.container/Activity1.cs" line="30" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.co.yat.android.container AndroidDeviceId-Debug="015d2a508c60121a" />

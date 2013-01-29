@@ -52,6 +52,7 @@
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
     <AssemblyName>coyatioscontainer</AssemblyName>
+    <IpaPackageName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -93,8 +94,7 @@
     <WarningLevel>4</WarningLevel>
     <AssemblyName>coyatioscontainer</AssemblyName>
     <MtouchLink>None</MtouchLink>
-    <MtouchDebug>True</MtouchDebug>
-    <MtouchExtraArgs>-gcc_flags "-framework CFNetwork -framework CoreGraphics -force_load $(ProjectDir)/../Calabash_Frameworks/iOS/calabash.framework/calabash -lstdc++"</MtouchExtraArgs>
+    <MtouchExtraArgs>-gcc_flags "-framework CFNetwork -framework CoreGraphics -force_load $(ProjectDir)/calabash.framework/calabash -lstdc++"</MtouchExtraArgs>
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>

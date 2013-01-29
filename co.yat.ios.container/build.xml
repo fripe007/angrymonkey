@@ -9,37 +9,52 @@
 	<property name="outputLocSim" value="build/Debug-iphonesimulator/${outputFile}${outputExt}"/>
 	<property name="outputLocDevice" value="build/Debug-iphoneos/${outputFile}${outputExt}"/>
   <property name="projectName" value="ExampleView.xcodeproj"/>
-  <property name="targetSDK"  value="iphonesimulator6.0"/>
 	<property name="XcodeTarget"  value="ExampleView"/>
   <property name="buildDir"  value="dist"/>
-	<property name="sdkVersion" value="6.1"/>
+	<property name="sdkVersion" value="6.0"/>
 	<property name="targetFolder" value="./co.yat.ios.binding"/>
 	
 	<echo>Building ${XcodeTarget}</echo>
 	
 	<target name="debugSim">
+		<delete dir="bin"/>
+		<delete dir="obj"/>
+		<delete dir="${targetFolder}/bin"/>
+		<delete dir="${targetFolder}/obj"/>
 		<exec dir="${projectDir}" executable="xcodebuild">
 	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphonesimulator${sdkVersion} -configuration Debug "/>
 		</exec>
 		<copy file="${projectDir}/${outputLocSim}" todir="./co.yat.ios.binding"/>
-	</target>
-	
-	<target name="debugDevice">
-		<exec dir="${projectDir}" executable="xcodebuild">
-	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphoneos${sdkVersion} -configuration Debug "/>
-		</exec>
-		<copy file="${projectDir}/${outputLocDevice}" todir="${targetFolder}"/>
-		<echo file="${targetFolder}">using System;
+		<echo> WRITING: ${targetFolder}/${outputFile}.linkwith.cs</echo>
+		<echo file="${targetFolder}/${outputFile}.linkwith.cs" level="verbose" append="false">using System;
 using MonoTouch.ObjCRuntime;
 
 [assembly: LinkWith ("libExampleView.a", LinkTarget.Simulator, ForceLoad = true)]</echo>
 	</target>
 	
-	<target name="test" depends="debugSim">
-		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
-			<arg line="build -c:Calabash"/>
+	<target name="debugDevice">
+		<property environment="env"/>
+		<property name="env.DYLD_INSERT_LIBRARIES" value=""/>
+		
+		<exec dir="${projectDir}" executable="xcodebuild">
+	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphoneos${sdkVersion} -configuration Debug "/>
 		</exec>
-		<exec executable="cucumber"/>
+		<copy file="${projectDir}/${outputLocDevice}" todir="${targetFolder}"/>
+	</target>
+	
+	<target name="test" depends="debugSim">
+		<delete dir="testresults"/>
+		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+			<arg line="build &quot;--configuration:Calabash|iPhoneSimulator&quot;"/>
+		</exec>
+		<mkdir dir="testresults"/>
+		<exec executable="cucumber">
+			<redirector output="./testresults/results.txt" alwayslog="true"/> 
+			<arg line="-v"/>
+		</exec>
+	  <move todir="testresults">
+	    <fileset file="*.png"/>
+	  </move>
 	</target>
 	
 </project>
