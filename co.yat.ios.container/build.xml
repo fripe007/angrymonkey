@@ -13,9 +13,9 @@
   <property name="buildDir"  value="dist"/>
 	<property name="sdkVersion" value="6.0"/>
 	<property name="targetFolder" value="../co.yat.ios.binding"/>
+	<property name="builtAppPath" value="bin/iPhoneSimulator/Calabash/coyatioscontainer.app"/>
 	
 	<echo>Building ${XcodeTarget}</echo>
-	
 	<target name="debugSim">
 		<delete dir="bin"/>
 		<delete dir="obj"/>
@@ -32,10 +32,7 @@ using MonoTouch.ObjCRuntime;
 [assembly: LinkWith ("libExampleView.a", LinkTarget.Simulator, ForceLoad = true)]</echo>
 	</target>
 	
-	<target name="debugDevice">
-		<property environment="env"/>
-		<property name="env.DYLD_INSERT_LIBRARIES" value=""/>
-		
+	<target name="debugDevice">	
 		<exec dir="${projectDir}" executable="xcodebuild">
 	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphoneos${sdkVersion} -configuration Debug "/>
 		</exec>
@@ -49,6 +46,7 @@ using MonoTouch.ObjCRuntime;
 		</exec>
 		<mkdir dir="testresults"/>
 		<exec executable="cucumber">
+			<env key="APP_BUNDLE_PATH" value="${builtAppPath}"/>
 			<redirector output="./testresults/results.txt" alwayslog="true"/> 
 			<arg line="-v"/>
 		</exec>

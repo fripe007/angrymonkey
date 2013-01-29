@@ -29,7 +29,7 @@ require 'sim_launcher'
 # which includes calabash framework
 # this is usually the Calabash build configuration
 # of your production target.
-APP_BUNDLE_PATH = "bin/iPhoneSimulator/Calabash/coyatioscontainer.app"
+#APP_BUNDLE_PATH = "bin/iPhoneSimulator/Calabash/coyatioscontainer.app"
 #
 
 def reset_app_jail(sdk, app_path)

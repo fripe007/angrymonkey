@@ -28,3 +28,5 @@
 /co.yat.ios.container/co.yat.ios.binding/libExampleView.a
 /co.yat.ios.container/co.yat.ios.binding/libExampleView.linkwith.cs
 /co.yat.ios.container/testresults/
+bin
+/co.yat.ios.binding/obj/
