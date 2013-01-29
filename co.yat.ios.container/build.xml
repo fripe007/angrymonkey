@@ -1,0 +1,43 @@
+<project name="ExampleView" default="debugSim" basedir=".">
+    <description>
+			Prebuild for ios container
+    </description>
+  <!-- set global properties for this build -->
+  <property name="projectDir" location="../co.yat.ios.ExampleView/"/>
+	<property name="outputFile" value="libExampleView"/>
+	<property name="outputExt" value=".a"/>
+	<property name="outputLocSim" value="build/Debug-iphonesimulator/${outputFile}${outputExt}"/>
+	<property name="outputLocDevice" value="build/Debug-iphoneos/${outputFile}${outputExt}"/>
+  <property name="projectName" value="ExampleView.xcodeproj"/>
+  <property name="targetSDK"  value="iphonesimulator6.0"/>
+	<property name="XcodeTarget"  value="ExampleView"/>
+  <property name="buildDir"  value="dist"/>
+	<property name="sdkVersion" value="6.1"/>
+	<property name="targetFolder" value="./co.yat.ios.binding"/>
+	
+	<echo>Building ${XcodeTarget}</echo>
+	
+	<target name="debugSim">
+		<exec dir="${projectDir}" executable="xcodebuild">
+	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphonesimulator${sdkVersion} -configuration Debug "/>
+		</exec>
+		<copy file="${projectDir}/${outputLocSim}" todir="./co.yat.ios.binding"/>
+	</target>
+	
+	<target name="debugDevice">
+		<exec dir="${projectDir}" executable="xcodebuild">
+	  	<arg line="-target &quot;${XcodeTarget}&quot; -sdk iphoneos${sdkVersion} -configuration Debug "/>
+		</exec>
+		<copy file="${projectDir}/${outputLocDevice}" todir="${targetFolder}"/>
+		<echo file="${targetFolder}">using System;
+using MonoTouch.ObjCRuntime;
+
+[assembly: LinkWith ("libExampleView.a", LinkTarget.Simulator, ForceLoad = true)]</echo>
+	</target>
+	
+	<target name="test">
+		
+		
+	</target>
+	
+</project>

@@ -1,24 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AppDelegate.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
     <Files>
       <File FileName="Main.cs" Line="8" Column="16" />
       <File FileName="AppDelegate.cs" Line="30" Column="4" />
       <File FileName="co.yat.ios.binding/ApiDefinition.cs" Line="13" Column="25" />
-      <File FileName="Info.plist" />
       <File FileName="co.yat.ios.binding/StructsAndEnums.cs" Line="1" Column="1" />
+      <File FileName="Info.plist" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="co.yat.ios.binding" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
-          <Node name="co.yat.ios.container" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Resources" expanded="True" />
-            <Node name="AppDelegate.cs" selected="True" />
-          </Node>
+          <Node name="co.yat.ios.binding" expanded="True" />
+          <Node name="co.yat.ios.container" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
