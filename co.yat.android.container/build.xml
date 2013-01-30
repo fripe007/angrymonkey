@@ -1,17 +1,33 @@
 <?xml version="1.0"?>
 <project name="Android Example View Project" default="info">
-   <target name="debug">
+	<property name="APPLICATION" value=""/>
+	
+   <target name="prebuild">
       <echo>Building Example Android Application!</echo>
-			<echo>Clean Up</echo>
-			
 			<delete dir="bin"/>
 			<delete dir="obj"/>
-			<delete dir="../co.yat.android.binding/bin"/>
-			<delete dir="../co.yat.android.binding/obj"/>
-			<delete file="../co.yat.android.binding/ExampleView.zip"/>
-			
-			<echo>ZIP Jar Package</echo>
-			
-			<ant antfile="../co.yat.android.ExampleView/build.xml" target="debug" useNativeBasedir="true"/> 			
+			<delete dir="test_servers"/>
    </target>
+	 <target name="debug" depends="prebuild">
+ 		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+ 			<arg line="build &quot;--configuration:Debug&quot;"/>
+ 		</exec>
+	 </target>
+	 <target name="test" depends="prebuild">
+  	<exec executable="/Applications/Android/android-sdk-macosx/tools/emulator" spawn="true">
+  		<arg line="-avd MyAVD"/>
+  	</exec>
+  	<exec executable="xbuild">
+  		<arg line="/p:Configuration=Calabash"/>
+  	</exec>
+ 		<exec executable="xbuild">
+ 			<arg line="co.yat.android.container.csproj /t:SignAndroidPackage /p:Configuration=Calabash"/>
+ 		</exec>
+		<exec executable="calabash-android">
+			<arg line="run bin/Calabash/co.yat.android.container.apk"/>
+		</exec>
+		<exec executable="kill">
+			<arg line="-9 ps -ef | grep &quot;MyAVD&quot; -m 01 | awk '{print $2}'"/>
+		</exec>
+	 </target>
 </project>

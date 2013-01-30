@@ -11,7 +11,7 @@
   <property name="projectName" value="ExampleView.xcodeproj"/>
 	<property name="XcodeTarget"  value="ExampleView"/>
   <property name="buildDir"  value="dist"/>
-	<property name="sdkVersion" value="6.0"/>
+	<property name="sdkVersion" value="6.1"/>
 	<property name="targetFolder" value="../co.yat.ios.binding"/>
 	<property name="builtAppPath" value="bin/iPhoneSimulator/Calabash/coyatioscontainer.app"/>
 	
