@@ -91,9 +91,9 @@
 		
 		<!-- delete the duplicate classes.jar and zips file-->
 		<echo>Zipping output</echo>
-		<zip destfile="../co.yat.android.binding/ExampleView.zip"
+		<zip destfile="../co.yat.android.binding/co.yat.android.exampleview.zip"
 		   basedir="./"
 		   includes="bin/**,res/**"
-			 excludes="bin/classes.jar"
+			 excludes="bin/ExampleView.jar"
 		/>
 </project>

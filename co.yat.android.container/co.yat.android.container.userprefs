@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Activity1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
     <Files>
-      <File FileName="Activity1.cs" Line="13" Column="22" />
-      <File FileName="Properties/AndroidManifest.xml" Line="6" Column="12" />
+      <File FileName="MainActivity.cs" Line="16" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,15 +10,16 @@
           <Node name="co.yat.android.binding" expanded="True">
             <Node name="Transforms" expanded="True" />
           </Node>
-          <Node name="co.yat.android.container" expanded="True">
+          <Node name="co.yat.android.container" expanded="True" selected="True">
             <Node name="References" expanded="True" />
+            <Node name="Assets" expanded="True" />
             <Node name="Properties" expanded="True" />
-            <Node name="Activity1.cs" selected="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="drawable" expanded="True" />
+              <Node name="values" expanded="True" />
+            </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

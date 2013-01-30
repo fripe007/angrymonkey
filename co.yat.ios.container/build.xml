@@ -10,10 +10,12 @@
 	<property name="OUTPUT_DEVICE" value="build/Debug-iphoneos/${OUTPUT_FILE}${OUTPUT_EXT}"/>
   <property name="PROJECT_NAME" value="ExampleView.xcodeproj"/>
 	<property name="XCODE_TARGET"  value="ExampleView"/>
-	<property name="SDK_VERSION" value="6.0"/>
-	<property name="TARGET_FOLDER" value="../co.yat.ios.binding"/>
-	<property name="APP_PATH" value="bin/iPhoneSimulator/Calabash/coyatioscontainer.app"/>
+  <property name="buildDir"  value="dist"/>
+
+
+
 	
+	<echo>Building ${XcodeTarget}</echo>
 	<target name="default">
 		<delete dir="bin"/>
 		<delete dir="obj"/>
@@ -26,6 +28,7 @@
 	  	<arg line="-target &quot;${XCODE_TARGET}&quot; -sdk iphonesimulator${SDK_VERSION} -configuration Debug "/>
 		</exec>
 		<copy file="${PROJECT_DIR}/${OUTPUT_SIMULATOR}" todir="${TARGET_FOLDER}"/>
+		<echo> WRITING: ${targetFolder}/${outputFile}.linkwith.cs</echo>
 		<echo file="${TARGET_FOLDER}/${OUTPUT_FILE}.linkwith.cs" level="verbose" append="false">using System;
 using MonoTouch.ObjCRuntime;
 

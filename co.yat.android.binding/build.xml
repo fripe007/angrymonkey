@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="Android Example View Project" default="info">
+   <target name="prebuild">
+      <echo>Building Example Android Application!</echo>
+			<delete dir="bin"/>
+			<delete dir="obj"/>
+			<delete file="co.yat.android.exampleview.zip"/>			
+			<ant antfile="../co.yat.android.ExampleView/build.xml" target="debug" useNativeBasedir="true"/> 			
+   </target>
+	 <target name="debug" depends="prebuild">
+ 		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+ 			<arg line="build &quot;--configuration:Debug&quot;"/>
+ 		</exec>
+	 </target>
+</project>

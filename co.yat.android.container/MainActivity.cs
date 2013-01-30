@@ -10,14 +10,21 @@ using Android.OS;
 namespace co.yat.android.container
 {
 	[Activity (Label = "co.yat.android.container", MainLauncher = true)]
-	public class Activity1 : CO.Yat.Android.Exampleview.MainActivity
+	public class MainActivity : CO.Yat.Android.Exampleview.MainActivity
 	{
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			GetMessage("test","test");
+			//GetMessage("test","test");
+
+			#if(CALABASH)
+				const string keyguard = "keyguard";
+				var mKeyGuardManager = (KeyguardManager)GetSystemService (keyguard);
+				var mLock = mKeyGuardManager.NewKeyguardLock (this.GetType ().ToString ());
+				mLock.DisableKeyguard ();
+			#endif
 
 		}
 
