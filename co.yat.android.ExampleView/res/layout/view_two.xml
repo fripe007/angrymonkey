@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp"
-        android:text="Show View One" />
+        android:text="@string/View2_Button_Text" />
 
     <TextView
         android:id="@+id/textView1"
@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        android:text="View Two"
+        android:text="@string/View_Two_Title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

@@ -12,4 +12,9 @@
  			<arg line="build &quot;--configuration:Debug&quot;"/>
  		</exec>
 	 </target>
+	 <target name="release" depends="prebuild">
+ 		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+ 			<arg line="build &quot;--configuration:Release&quot;"/>
+ 		</exec>
+	 </target>
 </project>

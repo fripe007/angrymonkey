@@ -47,3 +47,17 @@ or to test only one platform
 >> ant debugAndroid
 
 This will generate the simple two view example and execute the tests for the selected configuration.
+
+Calabash Notes
+
+Android:
+
+For the test server to run you must add the internet permission to your manafest like so...
+<uses-permission android:name="android.permission.INTERNET" />
+
+In order to run calabash the server must be signed with the same file that is used by monodevelop or the applicaiton will fail, add a .calabash_settings file to the root where you run your tests from with the following details
+{"keystore_location":"~/.local/share/Xamarin/Mono for Android/debug.keystore","keystore_password":"android","keystore_alias":"androiddebugkey","keystore_alias_password":"android"}
+
+After this has been compelted you must build the server before running
+calabash-android build [path to your file]-Signed.apk
+calabash-android run [path to your file]-Signed.apk

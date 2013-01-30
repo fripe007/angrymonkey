@@ -30,3 +30,10 @@
 /co.yat.ios.container/testresults/
 bin
 /co.yat.ios.binding/obj/
+test_servers
+screenshot_
+screenshot_(.*).png
+screenshot_0.png
+/tests/
+/co.yat.android.container/screenshot_1.png
+/co.yat.android.container/screenshot_2.png

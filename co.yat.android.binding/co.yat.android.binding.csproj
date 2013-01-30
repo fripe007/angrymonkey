@@ -25,7 +25,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <CustomCommands>
       <CustomCommands>
         <Command type="BeforeBuild" command="ant prebuild" workingdir="${ProjectDir}" />
@@ -41,7 +40,11 @@
     <ConsolePause>False</ConsolePause>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="ant prebuild" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Calabash|AnyCPU' ">
     <DebugType>none</DebugType>

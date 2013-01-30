@@ -1,19 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/values/Strings.xml">
     <Files>
       <File FileName="MainActivity.cs" Line="16" Column="51" />
+      <File FileName="Properties/AndroidManifest.xml" Line="4" Column="64" />
+      <File FileName="Resources/values/Strings.xml" Line="6" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="co.yat.android.binding" expanded="True">
+          <Node name="co.yat.android.binding" expanded="True" selected="True">
             <Node name="Transforms" expanded="True" />
           </Node>
-          <Node name="co.yat.android.container" expanded="True" selected="True">
+          <Node name="co.yat.android.container" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="Assets" expanded="True" />
-            <Node name="Properties" expanded="True" />
             <Node name="Resources" expanded="True">
               <Node name="drawable" expanded="True" />
               <Node name="values" expanded="True" />
@@ -27,5 +27,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.co.yat.android.container AndroidDeviceId-Debug="015d2a508c60121a" />
+  <MonoDevelop.Ide.ItemProperties.co.yat.android.container AndroidDeviceId-Release="emulator-5554" />
 </Properties>

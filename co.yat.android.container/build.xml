@@ -7,6 +7,7 @@
 			<delete dir="bin"/>
 			<delete dir="obj"/>
 			<delete dir="test_servers"/>
+			<ant antfile="../co.yat.android.binding/build.xml" target="prebuild" useNativeBasedir="true"/> 	
    </target>
 	 <target name="debug" depends="prebuild">
  		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
@@ -14,20 +15,27 @@
  		</exec>
 	 </target>
 	 <target name="test" depends="prebuild">
+		 <!--
   	<exec executable="/Applications/Android/android-sdk-macosx/tools/emulator" spawn="true">
   		<arg line="-avd MyAVD"/>
   	</exec>
-  	<exec executable="xbuild">
-  		<arg line="/p:Configuration=Calabash"/>
-  	</exec>
- 		<exec executable="xbuild">
- 			<arg line="co.yat.android.container.csproj /t:SignAndroidPackage /p:Configuration=Calabash"/>
+		-->
+ 		<exec executable="/Applications/MonoDevelop.app/Contents/MacOS/mdtool">
+ 			<arg line="build &quot;--configuration:Release&quot;"/>
  		</exec>
+ 		<exec executable="xbuild">
+ 			<arg line="co.yat.android.container.csproj /t:SignAndroidPackage /p:Configuration=Release"/>
+ 		</exec>		
 		<exec executable="calabash-android">
-			<arg line="run bin/Calabash/co.yat.android.container.apk"/>
+			<arg line="build bin/Release/co.yat.android.container-Signed.apk"/>
 		</exec>
+		<exec executable="calabash-android">
+			<arg line="run bin/Release/co.yat.android.container-Signed.apk"/>
+		</exec>
+		<!--
 		<exec executable="kill">
 			<arg line="-9 ps -ef | grep &quot;MyAVD&quot; -m 01 | awk '{print $2}'"/>
 		</exec>
+		-->
 	 </target>
 </project>

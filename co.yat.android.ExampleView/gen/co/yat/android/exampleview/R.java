@@ -31,7 +31,9 @@ public final class R {
     }
     public static final class string {
         public static int View1_Button_Text=0x7f050003;
+        public static int View2_Button_Text=0x7f050006;
         public static int View_One_Title=0x7f050004;
+        public static int View_Two_Title=0x7f050005;
         public static int app_name=0x7f050000;
         public static int hello_world=0x7f050001;
         public static int menu_settings=0x7f050002;
