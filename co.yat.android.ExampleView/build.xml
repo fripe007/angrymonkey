@@ -94,6 +94,6 @@
 		<zip destfile="../co.yat.android.binding/co.yat.android.exampleview.zip"
 		   basedir="./"
 		   includes="bin/**,res/**"
-			 excludes="bin/exampleview.jar"
+			 excludes="bin/exampleview.jar,bin/co.yat.android.exampleview.jar"
 		/>
 </project>
